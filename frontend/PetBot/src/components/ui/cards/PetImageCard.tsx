@@ -11,6 +11,7 @@ const PetImageCard = () => {
                     className="h-48 w-48 mx-auto rounded-full"
                 />
             </div>
+            <div className=""></div>
         </>
     )
 }
