@@ -43,7 +43,7 @@ const SignUpForm = () => {
                         </div>
                     </div>
                     <div className="button">
-                        <PrimaryButton link={"landing"} colorVariation={"blue"} ButtonText="Create Account" />
+                        <PrimaryButton link={"pet-selection"} colorVariation={"blue"} ButtonText="Create Account" />
                     </div>
                 </div>
             </form>
