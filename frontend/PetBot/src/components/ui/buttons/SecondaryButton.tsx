@@ -1,14 +1,14 @@
 
 import { Link } from "react-router-dom";
 
-interface PrimaryButtonProps {
-    link: string;
+interface SecondaryButtonProps {
+    link?: string;
     colorVariation: "blue" | "green";
     borderRadius?: "rounded-3xl" | "rounded-pill";
     ButtonText: string;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ link, colorVariation, borderRadius = "rounded-3xl", ButtonText }) => {
+const SecondaryButton: React.FC<SecondaryButtonProps> = ({ link, colorVariation, borderRadius = "rounded-3xl", ButtonText }) => {
     let bgColorClass;
     let textColorClass;
 
@@ -32,7 +32,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ link, colorVariation, bor
     return (
         <div className="mx-auto text-center">
             <Link to={`/${link}`}>
-                <p className={`px-4 py-2 rounded-lg bg-blue ${textColorClass} ${borderRadiusClass} font-bold` }>
+                <p className={`px-6 py-3  bg-blue ${textColorClass} font-bold` }>
                     {ButtonText}
                 </p>
             </Link>
@@ -40,4 +40,4 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ link, colorVariation, bor
     );
 };
 
-export default PrimaryButton;
+export default SecondaryButton;
