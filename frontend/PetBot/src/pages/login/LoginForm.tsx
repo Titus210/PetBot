@@ -27,7 +27,7 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <div className="button">
-                        <PrimaryButton link={"landing"} colorVariation={"blue"} ButtonText="Login"/>
+                        <PrimaryButton link={"homepage"} colorVariation={"blue"} ButtonText="Login"/>
                     </div>
                 </div>
             </form>
