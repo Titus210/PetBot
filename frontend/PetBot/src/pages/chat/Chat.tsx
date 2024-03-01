@@ -56,6 +56,16 @@ const handleSendClick = async () => {
       // Handle any errors that occurred during the API call
       console.error('Error:', error.message);
     }
+
+    // If the request was successful, update the user prompts state
+    const newPrompt = {
+      id: userPrompts.length + 1,
+      userPrompt: inputValue,
+      response: "How can I help you?",
+    };
+
+    setUserPrompts([...userPrompts, newPrompt]);
+    setInputValue('');
   }
 };
 
