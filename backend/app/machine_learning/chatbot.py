@@ -1,3 +1,7 @@
+from flask import Flask, render_template, request, jsonify
+from flask_cors import cross_origin, CORS
+
+
 import random
 import json
 import pickle
@@ -6,6 +10,9 @@ import nltk
 
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
+
+app = Flask(__name__)
+CORS(app)
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('../db/pet_intents.json').read())
@@ -54,10 +61,37 @@ def get_response(intents_list, intents_json):
     return result
 
 
-print("GO! Bot is running!")
+# Route to serve the HTML file
+"""
+@app.route('/')
+def index():
+    return render_template('index.html')
+"""
 
-while True:
-    message = input("")
+# Route to handle user's message and return response
+'''
+@app.route('/get_response', methods=['POST'])
+def get_bot_response():
+    user_message = request.json['message']
+    bot_response = chat_response(user_message)
+    return jsonify({'response': bot_response})
+'''
+
+# Route to handle user's message from frontend
+@app.route('/get_bot_response', methods=['POST'])
+def get_bot_response():
+    user_message = request.json['message']
+    bot_response = chat_response(user_message)
+    return jsonify({'response': bot_response})
+
+
+# Function to process user's message and get response from the bot
+def chat_response(message):
+    intents = json.loads(open('../db/pet_intents.json').read())
     ints = predict_class(message)
     res = get_response(ints, intents)
-    print(res)
+    return res
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
