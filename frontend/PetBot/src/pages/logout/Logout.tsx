@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Logout: React.FC = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(true);
 
     const handleLogout = () => {
         // Do something when user clicks "Yes"

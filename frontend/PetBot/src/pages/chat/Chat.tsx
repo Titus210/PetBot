@@ -1,4 +1,4 @@
-import {Key, useState} from 'react';
+import { Key, useState } from 'react';
 import Input from '../../components/ui/inputs/Input';
 
 interface UserPrompt {
@@ -53,7 +53,7 @@ const Chat: React.FC = () => {
 
   return (
     <div className="flex h-screen flex-col py-3 bg-slate-400  items-center mx-auto  justify-between ">
-      {userPrompts.length === 0 && ( 
+      {userPrompts.length === 0 && (
         <div className="absolute top-[50%]">
           <div className="self-center rounded-full">
             {/* <Logo /> */}
@@ -64,8 +64,8 @@ const Chat: React.FC = () => {
         </div>
       )}
 
-      <div className="overflow-y-auto w-11/12">
-        {userPrompts.map((prompt: { id: Key ; userPrompt: string ; response: string | number | boolean}) => (
+      <div className="overflow-y-auto lg:w-7/12">
+        {userPrompts.map((prompt: { id: Key; userPrompt: string; response: string | number | boolean }) => (
           <div key={prompt.id} className="flex flex-col space-y-2 p-4">
             <div className="flex items-center self-end w-12/12 md:max-w-2xl bg-slate-500 rounded-xl rounded-tr bg-blue-500 py-2 px-6 text-white">
               <p className='  text-sm py-2'>{prompt.userPrompt}</p>

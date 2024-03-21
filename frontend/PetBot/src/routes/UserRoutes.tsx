@@ -11,7 +11,8 @@ import SelectBreed from "../pages/signup/SelectBreed";
 import { PetAge, PetName } from "../pages/signup/NameSelection";
 import Logout from "../pages/logout/Logout";
 import HelpSupport from "../pages/helpSupport/HelpSupport";
-import Settings from "../pages/account/Account";
+import PetInfoForm from "../pages/signup/PetInfoForm";
+
 
 const UserRoutes = () => {
     return (
@@ -20,9 +21,10 @@ const UserRoutes = () => {
                 <Route path="/" element={<GetStarted />} />
 
                 <Route path="/homepage/" element={<HomePage />} >
+                    <Route path="/homepage/home" element={<Chat />} />
                     <Route path="/homepage/chat" element={<Chat />} />
                     <Route path="/homepage/logout" element={<Logout />} />
-                    <Route path="/homepage/account-information" element={<Settings />} />
+                    
                     <Route path="/homepage/help-support" element={<HelpSupport />} />
                 </Route>
 
@@ -30,11 +32,8 @@ const UserRoutes = () => {
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="/pet-selection" element={<SelectPet />} />
-                <Route path="/breed-selection" element={<SelectBreed />} />
+                <Route path="/pet-info" element={<PetInfoForm />} />
 
-                <Route path="/pet-name" element={<PetName />} />
-                <Route path="/pet-age" element={<PetAge />} />
     
                 <Route path="help-support" element={< HelpSupport />} />
                 <Route element={<NotFound />} />

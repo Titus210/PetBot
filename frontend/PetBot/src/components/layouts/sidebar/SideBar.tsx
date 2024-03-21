@@ -1,17 +1,16 @@
-import React from 'react';
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom';
 
 // import icons
-import { MdDashboard, MdOutlineExplore, MdNotifications, MdAccountCircle, MdOutlineHelp } from "react-icons/md";
-import { FaChartLine } from 'react-icons/fa'
-import { FiSend } from 'react-icons/fi'
-import { RiLogoutCircleLine } from 'react-icons/ri'
-// travel safari logo
-// import logo from '../../../assets/images/dog.jpg';
+import { MdDashboard, MdOutlineExplore, MdOutlineHelp } from "react-icons/md";
 
-// user image
+
+import { RiLogoutCircleLine } from 'react-icons/ri'
+
+
+
 import personProfile from '../../../assets/images/dog.jpg';
+
 
 import './sidebar.css'
 
@@ -26,7 +25,7 @@ const ProfileImage = styled.div`
 const SideBar: React.FC = () => {
   return (
     <div className="sidebar">
-      <div className="flex flex-col w-full  h-screen relative  bg-slate-800 px-4">
+      <div className="flex flex-col  w-full  h-screen relative  bg-slate-800 px-4">
 
 
         {/* User details */}
@@ -63,40 +62,17 @@ const SideBar: React.FC = () => {
         {/*  navigation */}
         <div className="py-4 flex flex-col self-center items-center gap-4  text-white ">
           <div className="flex flex-col gap-4">
-            <div className="flex gap-3 items-center ">
-              <p><MdDashboard /></p>
-              <p className="text-md  bold">
-                Home
-              </p>
-            </div>
+         
 
             <div className="flex gap-3 items-center">
               <p><MdOutlineExplore /></p>
-              <p className="text-md  bold">
-                Chat
-              </p>
+              <Link to='chat'>
+                <p className="text-xl  bold">
+                  Chat
+                </p>
+              </Link>
             </div>
 
-            <div className="flex gap-3 items-center ">
-              <p><MdNotifications /></p>
-              <p className="text-md  bold">
-                Notification
-              </p>
-            </div>
-
-            <div className="flex gap-3 items-center ">
-              <p><FaChartLine /></p>
-              <p className="text-md  bold">
-                Pets
-              </p>
-            </div>
-
-            <div className="flex gap-3 items-center ">
-              <p><FiSend /></p>
-              <p className="text-md  bold">
-                Account
-              </p>
-            </div>
           </div>
         </div>
 
@@ -105,16 +81,20 @@ const SideBar: React.FC = () => {
           <div className="items-start flex flex-col">
             <div className="flex gap-3 items-center ">
               <p><MdOutlineHelp /></p>
-              <p className="text-md  bold">
-                Help & Support
-              </p>
+              <Link to='help-support'>
+                <p className="text-xl  bold">
+                  Help & Support
+                </p>
+              </Link>
             </div>
 
             <div className="flex gap-3 items-center ">
               <p><RiLogoutCircleLine /></p>
-              <p className="text-md  bold">
-                Logout
-              </p>
+              <Link to='logout'>
+                <p className="text-xl  bold">
+                  Logout
+                </p>
+              </Link>
             </div>
           </div>
         </div>

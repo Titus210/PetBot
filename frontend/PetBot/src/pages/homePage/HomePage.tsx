@@ -4,8 +4,8 @@ import SideBar from '../../components/layouts/sidebar/SideBar'
 import Chat from '../chat/Chat'
 import { Route, Routes } from 'react-router-dom'
 import Logout from '../logout/Logout'
-import Settings from '../account/Account'
 import HelpSupport from '../helpSupport/HelpSupport'
+import Home from '../home/Home'
 
 const HomePage = () => {
   return (
@@ -17,9 +17,8 @@ const HomePage = () => {
         <div className="chat-container">
           <Routes>
             <Route path="/chat" element={<Chat />} />
+        
             <Route path="/logout" element={<Logout />} />
-            <Route path="/notification" element={<Logout />} />
-            <Route path="/account-information" element={<Settings />} />
             <Route path="/help-support" element={<HelpSupport />} />
           </Routes>
         </div>

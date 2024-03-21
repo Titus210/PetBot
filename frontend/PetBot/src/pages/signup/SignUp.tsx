@@ -1,7 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import PetImageCard from '../../components/ui/cards/PetImageCard'
-import LoginForm from '../login/LoginForm'
 import SignUpForm from './SignUpForm'
 
 const SignUp = () => {
