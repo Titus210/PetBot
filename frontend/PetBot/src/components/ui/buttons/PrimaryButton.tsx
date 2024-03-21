@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 interface PrimaryButtonProps {
-    link: string;
+    link?: string;
     colorVariation: "blue" | "green";
     borderRadius?: "rounded-3xl" | "rounded-pill";
     ButtonText: string;
