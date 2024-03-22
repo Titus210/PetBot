@@ -7,7 +7,7 @@ CORS(app)
 
 # Function to create pets table if not exists
 def create_pets_table():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('../database/database.db')
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS pets (
@@ -35,7 +35,7 @@ def save_pet():
     pet_breed = data.get('pet_breed', '')  # Optional field, may not be present in the request
     agreement = data['agreement']
 
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('../database/database.db')
     cursor = conn.cursor()
 
     # Insert the pet information into the database
@@ -49,7 +49,7 @@ def save_pet():
 # Route to fetch pet information
 @app.route('/getpet', methods=['GET'])
 def get_pet():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('../database/database.db')
     cursor = conn.cursor()
 
     cursor.execute('SELECT pet_name, pet_age, pet_type, pet_breed FROM pets ORDER BY id DESC LIMIT 1')
@@ -67,4 +67,4 @@ def get_pet():
         return jsonify({'error': 'No pet information found'}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
