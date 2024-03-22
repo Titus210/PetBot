@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const SignUpForm = () => {
     const [username, setUsername] = useState('');
@@ -7,6 +8,8 @@ const SignUpForm = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,8 +42,8 @@ const SignUpForm = () => {
             const data = await response.json();
 
             if (response.ok) {
-                // Redirect or handle success response
-                console.log('Registration successful');
+                // Redirect to /pet-info upon successful registration
+                navigate('/pet-info');
             } else {
                 // Handle error response
                 console.error('Registration failed:', data.error);
