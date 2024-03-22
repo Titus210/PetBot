@@ -84,6 +84,14 @@ def login():
     else:
         # User does not exist
         return jsonify({'error': 'User not found'}), 404
+    
+    
+    @app.route('/logout', methods=['POST'])
+    def logout():
+        # Clear session data
+        session.clear()
+        # Optionally, perform any other necessary cleanup
+        return jsonify({'message': 'Logout successful'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

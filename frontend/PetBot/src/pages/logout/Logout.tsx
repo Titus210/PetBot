@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 
 const Logout: React.FC = () => {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     const handleLogout = () => {
-        // Do something when user clicks "Yes"
-        /*
-            - close session
-            - return / redirect to login page
-            - clear user data from local storage
-            - notify server about logout
-            - perform any necessary cleanup
-        */
+        // Clear local storage
+        localStorage.clear();
+        // Redirect to login page
+        window.location.href = '/login';
+        // Notify server about logout (optional)
+        // Perform any necessary cleanup
         console.log('Logging out...');
     };
 
