@@ -46,5 +46,25 @@ def save_pet():
 
     return jsonify({'message': 'Pet information saved successfully'}), 201
 
+# Route to fetch pet information
+@app.route('/getpet', methods=['GET'])
+def get_pet():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT pet_name, pet_age, pet_type, pet_breed FROM pets ORDER BY id DESC LIMIT 1')
+    pet_info = cursor.fetchone()
+
+    if pet_info:
+        pet_name, pet_age, pet_type, pet_breed = pet_info
+        return jsonify({
+            'petName': pet_name,
+            'petAge': pet_age,
+            'petType': pet_type,
+            'petBreed': pet_breed
+        })
+    else:
+        return jsonify({'error': 'No pet information found'}), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
