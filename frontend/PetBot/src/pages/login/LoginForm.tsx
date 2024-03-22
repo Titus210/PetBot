@@ -4,12 +4,13 @@ import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/signin', {
+            const response = await fetch('/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -19,13 +20,23 @@ const LoginForm = () => {
 
             if (response.ok) {
                 // Redirect or handle success response
-                console.log('Login successful');
+                window.location.href = '/homepage/chat';
             } else {
                 // Handle error response
-                console.error('Login failed');
+                const status = response.status;
+                if (status === 401) {
+                    const data = await response.json();
+                    setErrorMessage(data.error);
+                } else if (status === 404) {
+                    setErrorMessage('User not found. Please register.');
+                } else {
+                    console.error('An unexpected error occurred:', status);
+                    setErrorMessage('An unexpected error occurred.');
+                }
             }
         } catch (error) {
             console.error('An error occurred:', error);
+            setErrorMessage('An unexpected error occurred.');
         }
     };
 
@@ -57,11 +68,12 @@ const LoginForm = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <PrimaryButton
+                    <button
                         type="submit"
-                        colorVariation="blue"
-                        ButtonText="Login"
-                    />
+                        onClick={handleSubmit}
+                        className="w-full p-2 text-white bg-blue rounded-lg"
+                    >Login with Email</button>
+                    {errorMessage && <p className="text-red">{errorMessage}</p>}
                 </div>
             </div>
         </form>
