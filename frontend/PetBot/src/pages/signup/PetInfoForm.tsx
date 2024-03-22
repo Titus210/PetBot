@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
-import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
+import { useNavigate } from 'react-router'; 
+
 
 const PetInfoForm = () => {
     const [formData, setFormData] = useState({
         petName: '',
         petAge: '',
-        breed: '',
+        pet_type: '',
+        petBreed: '',
         agreement: false
     });
+    const navigate = useNavigate();
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         const val = type === 'checkbox' ? checked : value;
         setFormData({
@@ -19,20 +22,23 @@ const PetInfoForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Prepare data to send to the backend
+        //  data to send to the backend
         const postData = {
             pet_name: formData.petName,
             pet_age: formData.petAge,
-            breed: formData.breed,
+            pet_type: formData.pet_type,
+            pet_breed: formData.petBreed,
             agreement: formData.agreement ? 'yes' : 'no' // Convert boolean to string
         };
 
         try {
-            // Make POST request to your Django backend
-            const response = await axios.post('/savepet', postData);
+            // Make POST request to save pet info
+            const response = await axios.post('http://localhost:5000/savepet', postData);
             console.log(response.data); 
+            // Redirect to the pet-info page after successfully saving pet info
+            navigate('/login');
         } catch (error) {
             console.error('Error:', error);
         }
@@ -42,6 +48,7 @@ const PetInfoForm = () => {
         <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4">
                 <div className="input">
+                    <label htmlFor="petName">Pet Name</label>
                     <input
                         type="text"
                         name="petName"
@@ -52,6 +59,7 @@ const PetInfoForm = () => {
                     />
                 </div>
                 <div className="input">
+                    <label htmlFor="petAge">Age</label>
                     <input
                         type="text"
                         name="petAge"
@@ -62,12 +70,23 @@ const PetInfoForm = () => {
                     />
                 </div>
                 <div className="input">
+                    <label htmlFor="petBreed">Breed</label>
+                    <input
+                        type="text"
+                        name="petBreed"
+                        value={formData.petBreed}
+                        onChange={handleChange}
+                        placeholder="Breed"
+                        className="w-full p-2 border-2 border-gray-200 rounded-lg"
+                    />
+                </div>
+                <div className="input">
                     <label>
                         <input
                             type="radio"
-                            name="breed"
+                            name="pet_type"
                             value="Cat"
-                            checked={formData.breed === 'Cat'}
+                            checked={formData.pet_type === 'Cat'}
                             onChange={handleChange}
                             className="mr-2"
                         />
@@ -76,9 +95,9 @@ const PetInfoForm = () => {
                     <label>
                         <input
                             type="radio"
-                            name="breed"
+                            name="pet_type"
                             value="Dog"
-                            checked={formData.breed === 'Dog'}
+                            checked={formData.pet_type === 'Dog'}
                             onChange={handleChange}
                             className="mr-2"
                         />
@@ -96,7 +115,10 @@ const PetInfoForm = () => {
                     <label htmlFor="agreement">I agree that this information is valid</label>
                 </div>
                 <div className="button">
-                    <PrimaryButton link='homepage/chat' type="submit" colorVariation="blue" ButtonText="Save Information" />
+                <button
+                            type="submit"
+                            className="w-full p-2 text-white bg-blue rounded-lg"
+                        >Save Info</button>
                 </div>
             </div>
         </form>
