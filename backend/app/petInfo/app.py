@@ -7,7 +7,7 @@ CORS(app)
 
 # Function to create pets table if not exists
 def create_pets_table():
-    conn = sqlite3.connect('../database/database.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS pets (
@@ -25,31 +25,25 @@ def create_pets_table():
 # Initialize the pets table
 create_pets_table()
 
-# Route to save pet information
-@app.route('/savepet', methods=['POST'])
-def save_pet():
-    data = request.get_json()
-    pet_name = data['pet_name']
-    pet_age = data['pet_age']
-    pet_type = data['pet_type']
-    pet_breed = data.get('pet_breed', '')  # Optional field, may not be present in the request
-    agreement = data['agreement']
-
-    conn = sqlite3.connect('../database/database.db')
+# save_pet function
+def save_pet(data):
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
 
     # Insert the pet information into the database
     cursor.execute('INSERT INTO pets (pet_name, pet_age, pet_type, pet_breed, agreement) VALUES (?, ?, ?, ?, ?)', 
-                   (pet_name, pet_age, pet_type, pet_breed, agreement))
+                   (data['pet_name'], data['pet_age'], data['pet_type'], data.get('pet_breed', ''), data['agreement']))
+    pet_id = cursor.lastrowid
+
     conn.commit()
     conn.close()
 
-    return jsonify({'message': 'Pet information saved successfully'}), 201
+    return pet_id
 
 # Route to fetch pet information
 @app.route('/getpet', methods=['GET'])
 def get_pet():
-    conn = sqlite3.connect('../database/database.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
 
     cursor.execute('SELECT pet_name, pet_age, pet_type, pet_breed FROM pets ORDER BY id DESC LIMIT 1')
