@@ -14,7 +14,7 @@ const HomePage = () => {
         <div className="flex w-max relative">
           <SideBar />
         </div>
-        <div className="chat-container">
+        <div className="chat-container w-11/12">
           <Routes>
             <Route path="/chat" element={<Chat />} />
         

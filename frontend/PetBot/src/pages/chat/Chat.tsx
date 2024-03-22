@@ -76,7 +76,7 @@ const Chat: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="  right-0 w-11/12  ">
+      <div className="  right-0 md:w-8/12  ">
         <div className="">
           <Input
             placeholder="Enter Your Prompt here"
