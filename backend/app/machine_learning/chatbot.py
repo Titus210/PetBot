@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, jsonify
-from flask_cors import cross_origin, CORS
 
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from grammar_check import check_sentence, english_words, is_gibberish
 
+import os
 import random
 import json
 import pickle
@@ -12,10 +14,17 @@ from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
 app = Flask(__name__)
+
 CORS(app)
 
+# Get the current working directory
+current_directory = os.getcwd()
+
+# Print the current working directory
+print("Current Working Directory:", current_directory)
+
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('../db/pet_intents.json').read())
+intents = json.loads(open('../db/pet_intents.json', 'r').read())
 
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
@@ -77,14 +86,6 @@ def get_bot_response():
     return jsonify({'response': bot_response})
 '''
 
-# Route to handle user's message from frontend
-@app.route('/get_bot_response', methods=['POST'])
-def get_bot_response():
-    user_message = request.json['message']
-    bot_response = chat_response(user_message)
-    return jsonify({'response': bot_response})
-
-
 # Function to process user's message and get response from the bot
 def chat_response(message):
     intents = json.loads(open('../db/pet_intents.json').read())
@@ -93,5 +94,20 @@ def chat_response(message):
     return res
 
 
+# Route to handle user's message from frontend
+@app.route('/get_bot_response', methods=['POST'])
+def get_bot_response():
+    user_message = request.json['message']
+    
+    # Check if the input is a valid English sentence
+    grammar_check_result = check_sentence(user_message)
+    if grammar_check_result != "Good sentence!":
+        return jsonify({'response': grammar_check_result})
+
+    # If the input is a valid English sentence, proceed with getting chatbot response
+    bot_response = chat_response(user_message)
+    return jsonify({'response': bot_response})
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5002)

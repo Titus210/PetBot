@@ -21,7 +21,7 @@ const Chat: React.FC = () => {
   const handleSendClick = async () => {
     if (inputValue.trim() !== '') {
       try {
-        const response = await fetch('http://localhost:5000/get_bot_response', {
+        const response = await fetch('http://localhost:5002/get_bot_response', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

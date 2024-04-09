@@ -10,7 +10,7 @@ import Home from '../home/Home'
 const HomePage = () => {
   return (
     <>
-      <div className="flex w-screen bg-slate-200">
+      <div className="flex w-screen bg-slate-200 ">
         <div className="flex w-max relative">
           <SideBar />
         </div>
