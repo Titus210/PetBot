@@ -6,9 +6,6 @@ import Chat from "../pages/chat/Chat";
 import NotFound from "../pages/notFound/NotFound";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signup/SignUp";
-import SelectPet from "../pages/signup/SelectPet";
-import SelectBreed from "../pages/signup/SelectBreed";
-import { PetAge, PetName } from "../pages/signup/NameSelection";
 import Logout from "../pages/logout/Logout";
 import HelpSupport from "../pages/helpSupport/HelpSupport";
 import PetInfoForm from "../pages/signup/PetInfoForm";
@@ -27,7 +24,6 @@ const UserRoutes = () => {
                     
                     <Route path="/homepage/help-support" element={<HelpSupport />} />
                 </Route>
-
 
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/login" element={<Login />} />

@@ -35,7 +35,7 @@ const PetInfoForm = () => {
 
         try {
             // Make POST request to save pet info
-            const response = await axios.post('http://localhost:5001/savepet', postData);
+            const response = await axios.post('http://localhost:5000/savepet', postData);
             console.log(response.data); 
             // Redirect to the pet-info page after successfully saving pet info
             navigate('/login');
