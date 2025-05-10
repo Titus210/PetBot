@@ -1,5 +1,5 @@
-import PetImageCard from '../../components/ui/cards/PetImageCard';
-import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
+import PetImageCard from '../../../components/ui/cards/PetImageCard';
+import PrimaryButton from '../../../components/ui/buttons/PrimaryButton';
 
 
 const GetStarted = () => {

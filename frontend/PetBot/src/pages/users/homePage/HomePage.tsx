@@ -1,11 +1,11 @@
 import React from 'react'
 
-import SideBar from '../../components/layouts/sidebar/SideBar'
+import SideBar from '../../../components/layouts/sidebar/SideBar'
 import Chat from '../chat/Chat'
 import { Route, Routes } from 'react-router-dom'
-import Logout from '../logout/Logout'
-import HelpSupport from '../helpSupport/HelpSupport'
-import Home from '../home/Home'
+import Logout from '../../auth/logout/Logout'
+import HelpSupport from '../../common/helpSupport/HelpSupport'
+import Home from '../../common/home/Home'
 
 const HomePage = () => {
   return (

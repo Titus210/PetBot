@@ -1,5 +1,5 @@
 import React from 'react'
-import PetImageCard from '../../components/ui/cards/PetImageCard'
+import PetImageCard from '../../../components/ui/cards/PetImageCard'
 
 const Home = () => {
     return (

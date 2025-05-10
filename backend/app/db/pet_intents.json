@@ -2,88 +2,111 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hey", "Hello"],
-      "responses": ["Hello! How can I assist you with your pet today?", "Hi there! How can I help you and your pet?", "Hey! What can I do for you and your furry friend?"]
+      "patterns": [
+        "Hi there, my name is [Name] and I have a question about my pet [Pet Name]",
+        "Good morning! I'm [Owner Name] and I'm looking for advice about my [Pet Type] named [Pet Name]",
+        "Hello chatbot, my name is [Owner Name] and I need help with my [Pet Breed] named [Pet Name]",
+        "Hey there! I'm [Owner Name] and I have a [Pet Age] year old [Pet Type] who needs some guidance",
+        "Hi pet assistant! I'm [Owner Name] from [Location] and my [Pet Name] is having some issues",
+        "Greetings! My name is [Owner Name] and my beloved [Pet Name], who is a [Pet Breed], needs advice",
+        "Hello! I'm [Owner Name] and my [Pet Type] named [Pet Name] who is [Pet Age] years old needs help",
+        "Hey pet expert! I'm [Owner Name] and my [Pet Color] [Pet Breed] named [Pet Name] needs assistance",
+        "Hi! My name is [Owner Name] and I recently adopted a [Pet Type] named [Pet Name] who needs guidance",
+        "Good afternoon! I'm [Owner Name] and my [Pet Name], who is a [Pet Age] year old [Pet Breed], needs help"
+      ],
+      "responses": [
+        "Hello [Owner Name]! I'm happy to help you with your [Pet Age] year old [Pet Breed] named [Pet Name]. What specific questions do you have today?",
+        "Hi there [Owner Name]! It's wonderful that you're looking for advice for your [Pet Color] [Pet Breed] named [Pet Name]. How can I assist you both today?",
+        "Good day [Owner Name]! I see you have a [Pet Type] named [Pet Name]. What would you like to know about caring for your [Pet Age] year old companion?",
+        "Hello [Owner Name] from [Location]! Your [Pet Name] sounds adorable. As a [Pet Breed] expert, I'd be happy to help with any questions you have.",
+        "Hey [Owner Name]! Congratulations on adopting [Pet Name]. For your new [Pet Type], I can provide guidance on nutrition, training, and health care. What do you need to know?",
+        "Greetings [Owner Name]! Your [Pet Age] year old [Pet Breed] named [Pet Name] must be very special. I'm here to help with any pet care questions you have.",
+        "Hi [Owner Name]! It's great you're seeking advice for [Pet Name]. As a [Pet Breed] owner myself, I can offer specific tips. What's on your mind today?",
+        "Hello there [Owner Name]! Your [Pet Color] [Pet Type] named [Pet Name] sounds lovely. I'd be delighted to share my knowledge about [Pet Breed] care.",
+        "Good day [Owner Name]! With your [Pet Name] being [Pet Age] years old, you might have some specific care questions. How can I assist you today?",
+        "Hey [Owner Name]! I'm excited to help you with your [Pet Breed] named [Pet Name]. Whether it's behavior, health, or training, I've got you covered!"
+      ]
     },
     {
-      "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
-      "responses": ["Goodbye! Feel free to come back anytime if you have more questions.", "See you later! Take care of your pet.", "Bye! Remember, I'm here to help with your pet anytime."]
+      "tag": "pet_health_nutrition",
+      "patterns": [
+        "What is the best diet for my [Pet Age] year old [Pet Breed] named [Pet Name] who has [Health Condition]?",
+        "My [Pet Type] [Pet Name] is experiencing [Symptom], what food should I avoid giving them?",
+        "Can you recommend a feeding schedule for my [Pet Weight] pound [Pet Breed] with [Dietary Need]?",
+        "How many calories should my [Pet Age] year old [Pet Type] named [Pet Name] consume daily?",
+        "What are the best supplements for my [Pet Breed] named [Pet Name] who has [Health Issue]?",
+        "My [Pet Name] was diagnosed with [Medical Condition], what dietary changes should I make?",
+        "Is [Food Item] safe for my [Pet Type] named [Pet Name] who has [Allergy]?",
+        "What homemade food recipes would you recommend for my [Pet Breed] with [Special Need]?",
+        "How can I transition my [Pet Name] from [Current Food] to [New Food] safely?",
+        "What are signs of food allergies in [Pet Breed] like my [Pet Name]?"
+      ],
+      "responses": [
+        "For your [Pet Age] year old [Pet Breed] named [Pet Name] with [Health Condition], I recommend [Diet Recommendation]. The ideal calorie intake would be [Calorie Range] per day.",
+        "Since your [Pet Name] has [Medical Condition], you should focus on [Dietary Advice]. Avoid [Foods to Avoid] and consider adding [Recommended Supplements].",
+        "A good feeding schedule for your [Pet Weight] pound [Pet Breed] would be [Feeding Schedule]. For their [Dietary Need], I suggest [Specific Recommendation].",
+        "For [Pet Name]'s [Health Issue], the best supplements would be [Supplement List]. These will help with [Specific Benefits] and improve their overall health.",
+        "With [Pet Name]'s diagnosis of [Medical Condition], you should [Dietary Changes]. Focus on [Nutrient Focus] and avoid [Problematic Ingredients].",
+        "Transitioning [Pet Name]'s food should be done gradually over [Time Period]. Start with [Transition Ratio] and watch for [Transition Signs].",
+        "For homemade meals for [Pet Name], try [Recipe Idea] which provides [Nutritional Benefits]. Make sure to include [Key Ingredients] for balanced nutrition.",
+        "Signs of food allergies in [Pet Breed] like [Pet Name] include [Symptom List]. If you notice these, try [Elimination Diet Process] to identify triggers.",
+        "While [Food Item] is generally [Safety Assessment] for [Pet Type], with [Pet Name]'s [Allergy], it's best to [Allergy Recommendation].",
+        "For [Pet Name]'s [Special Need], I'd recommend [Custom Diet Plan] that emphasizes [Nutrient Focus] and limits [Problematic Nutrients]."
+      ]
     },
     {
-      "tag": "thanks",
-      "patterns": ["Thanks", "Thank you"],
-      "responses": ["You're welcome! If you need anything else, just let me know.", "No problem! Happy to help.", "Glad I could assist you!"]
+      "tag": "pet_behavior_training",
+      "patterns": [
+        "My [Pet Breed] named [Pet Name] keeps [Problem Behavior], how can I stop this?",
+        "What's the best way to train my [Pet Age] year old [Pet Type] named [Pet Name] to [Desired Behavior]?",
+        "How do I socialize my [Pet Name] who is afraid of [Fear Trigger]?",
+        "My [Pet Name] shows [Aggressive Behavior] when [Situation], what should I do?",
+        "What training methods work best for [Pet Breed] like my [Pet Name]?",
+        "How can I teach my [Pet Type] named [Pet Name] to [Trick/Command]?",
+        "My [Pet Name] has separation anxiety when I [Owner Action], how can I help?",
+        "What's the best age to start training my [Pet Breed] puppy named [Pet Name]?",
+        "How do I stop my [Pet Name] from [Undesirable Behavior] during [Specific Time]?",
+        "My [Pet Type] [Pet Name] gets overly excited when [Trigger], how can I calm them?"
+      ],
+      "responses": [
+        "For your [Pet Breed] named [Pet Name]'s [Problem Behavior], I recommend [Training Technique]. This works well because [Explanation] and should show results within [Timeframe].",
+        "To train [Pet Name] to [Desired Behavior], use [Training Method]. Start with [First Steps] and gradually [Progression]. Reward with [Reward Type] for best results.",
+        "Socializing [Pet Name] with [Fear Trigger] requires [Desensitization Process]. Begin by [First Step] and slowly [Next Steps]. Always watch for [Stress Signals].",
+        "For [Pet Name]'s [Aggressive Behavior] during [Situation], try [Behavior Modification]. This involves [Technique Details] and may require [Additional Resources].",
+        "The most effective training for [Pet Breed] like [Pet Name] is [Breed-Specific Method] because [Breed Characteristics]. Focus on [Key Aspects] during sessions.",
+        "Teaching [Pet Name] to [Trick/Command] involves [Step-by-Step Process]. Break it down into [Number] steps: [Step 1], [Step 2], and [Step 3].",
+        "For [Pet Name]'s separation anxiety when you [Owner Action], implement [Anxiety Reduction Plan]. This includes [Strategy 1], [Strategy 2], and [Strategy 3].",
+        "Start training [Pet Name] now using [Age-Appropriate Methods]. At [Pet Age], focus on [Training Focus] for [Minutes] minutes [Frequency] per day.",
+        "To stop [Pet Name] from [Undesirable Behavior] during [Specific Time], try [Prevention Strategy]. Also provide [Alternative Behavior] as a replacement.",
+        "When [Pet Name] gets excited by [Trigger], use [Calming Technique]. This involves [Process Details] and helps teach [Desired Response]."
+      ]
     },
     {
-      "tag": "ask_behavior",
-      "patterns": ["How can I train my pet?", "My pet has behavior issues, what should I do?", "Can you help with pet training?"],
-      "responses": ["Training your pet requires consistency and positive reinforcement. What specific behavior are you working on?", "I can provide tips for training your pet. What behavior would you like to address?", "Training your pet is important! Let's talk about what you're struggling with."]
-    },
-    {
-      "tag": "ask_feeding",
-      "patterns": ["What should I feed my pet?", "How much should I feed my pet?", "Can you recommend pet food?"],
-      "responses": ["Feeding your pet a balanced diet is crucial. What type of pet do you have? I can offer specific recommendations.", "The right diet is key to your pet's health. Let's discuss your pet's dietary needs.", "Every pet has different nutritional needs. Let's find the best food for your furry friend."]
-    },
-    {
-      "tag": "ask_health",
-      "patterns": ["How do I keep my pet healthy?", "What vaccinations does my pet need?", "How often should I take my pet to the vet?"],
-      "responses": ["Regular vet check-ups are important for your pet's health. When was your pet's last visit?", "Keeping your pet healthy involves regular exercise and veterinary care. Let's create a health plan for your pet.", "Preventive care is key! Let's discuss your pet's health needs and any concerns you have."]
-    },
-    {
-      "tag": "ask_socialization",
-      "patterns": ["How can I socialize my pet?", "My pet is shy around other animals, what should I do?", "Can you help with pet socialization?"],
-      "responses": ["Socialization is important for your pet's well-being. Let's talk about how to introduce your pet to new experiences.", "Helping your pet become comfortable around others takes time and patience. Let's work on socialization together.", "I can provide tips for socializing your pet. What specific challenges are you facing?"]
-    },
-    {
-      "tag": "ask_exercise",
-      "patterns": ["How much exercise does my pet need?", "What are some good exercises for my pet?", "My pet is overweight, how can I help?"],
-      "responses": ["Exercise is essential for your pet's physical and mental health. Let's discuss an exercise plan tailored to your pet's needs.", "There are many fun ways to exercise with your pet! Let's explore some options.", "Helping your pet maintain a healthy weight involves both diet and exercise. Let's create a fitness routine for your furry friend."]
-    },
-    {
-      "tag": "ask_grooming",
-      "patterns": ["How often should I groom my pet?", "What grooming tools do I need?", "My pet doesn't like grooming, what should I do?"],
-      "responses": ["Grooming keeps your pet's coat healthy and reduces shedding. Let's discuss a grooming schedule that works for you and your pet.", "The right grooming tools can make the process easier for both you and your pet. Let's talk about what you'll need.", "Some pets are hesitant about grooming at first. Let's explore techniques to make it a positive experience for your furry friend."]
-    },
-    {
-      "tag": "ask_environment",
-      "patterns": ["How can I create a pet-friendly environment?", "What temperature is best for my pet?", "What should I include in my pet's habitat?"],
-      "responses": ["Creating a safe and comfortable environment is important for your pet's well-being. Let's discuss how to set up the perfect space for your furry friend.", "The right temperature and surroundings are crucial for your pet's health. Let's ensure your pet's habitat is ideal.", "Every pet has unique environmental needs. Let's tailor your pet's living space to suit their preferences."]
-    },
-    {
-      "tag": "ask_training",
-      "patterns": ["What are some fun tricks I can teach my pet?", "How do I house train my pet?", "Can you recommend training resources?"],
-      "responses": ["Training can be a fun bonding experience for you and your pet! Let's explore some tricks you can teach.", "House training requires patience and consistency. Let's create a plan to help your pet learn.", "There are many resources available to help you train your pet. Let's find the right approach for you."]
-    },
-    {
-      "tag": "ask_travelling",
-      "patterns": ["How can I travel safely with my pet?", "What should I pack for my pet when traveling?", "My pet gets anxious during car rides, what should I do?"],
-      "responses": ["Traveling with your pet can be enjoyable with the right preparation. Let's discuss how to make the journey safe and comfortable.", "Packing the essentials is key when traveling with your pet. Let's create a checklist together.", "Some pets experience anxiety during car rides. Let's explore techniques to help your pet feel more at ease."]
-    },
-    {
-      "tag": "ask_adoption",
-      "patterns": ["How do I adopt a pet?", "Where can I find pets for adoption?", "What should I consider before adopting a pet?"],
-      "responses": ["Adopting a pet is a wonderful decision! Let's discuss the process and what to consider.", "There are many shelters and rescue organizations where you can find pets for adoption. Let's find the right fit for you.", "Before adopting a pet, it's important to consider factors such as your lifestyle and the pet's needs. Let's explore these together."]
-    },
-    {
-      "tag": "ask_insurance",
-      "patterns": ["Is pet insurance necessary?", "What does pet insurance cover?", "How do I choose the right pet insurance?"],
-      "responses": ["Pet insurance can provide peace of mind in case of unexpected veterinary expenses. Let's discuss its importance and what options are available.", "Pet insurance coverage varies, so it's important to understand what's included. Let's go over the details together.", "Choosing the right pet insurance involves considering factors like coverage, cost, and your pet's specific needs. Let's explore your options."]
-    },
-    {
-      "tag": "ask_behavior_problems",
-      "patterns": ["My pet is displaying aggressive behavior, what should I do?", "How do I address my pet's separation anxiety?", "What should I do if my pet is chewing on furniture?"],
-      "responses": ["Addressing behavior problems requires understanding the root cause. Let's discuss strategies to modify your pet's behavior.", "Behavior problems can be challenging, but with patience and consistency, we can work through them together. Let's start by identifying the triggers.", "Redirecting your pet's behavior and providing appropriate outlets for their energy can help address common behavior problems. Let's create a plan tailored to your pet."]
-    },
-    {
-      "tag": "ask_first_aid",
-      "patterns": ["What should I do in case of a pet emergency?", "How do I perform CPR on my pet?", "Do you have tips for creating a pet first aid kit?"],
-      "responses": ["Knowing basic pet first aid can be life-saving. Let's discuss essential techniques and how to create a first aid kit.", "In an emergency, staying calm and knowing what to do can make a big difference. Let's review some first aid procedures for common pet emergencies.", "Having a pet first aid kit ready can help you respond quickly in case of an emergency. Let's put together a list of essential items for your kit."]
-    },
-    {
-      "tag": "ask_aging_care",
-      "patterns": ["How do I care for my aging pet?", "What are common health issues in senior pets?", "How can I make my home more comfortable for my senior pet?"],
-      "responses": ["Caring for an aging pet involves special considerations. Let's discuss how to provide the best possible care for your senior companion.", "As pets age, they may experience specific health issues. Let's talk about how to manage these and keep your pet comfortable.", "Making adjustments to your home can help accommodate your senior pet's needs. Let's explore ways to create a comfortable environment."]
+      "tag": "pet_health_emergency",
+      "patterns": [
+        "My [Pet Name] just ate [Toxic Substance], what should I do immediately?",
+        "[Pet Name] is showing [Emergency Symptom], is this life-threatening?",
+        "How do I perform CPR on my [Pet Type] named [Pet Name]?",
+        "What are the emergency numbers I should have for my [Pet Breed] named [Pet Name]?",
+        "My [Pet Name] got injured by [Injury Cause], what first aid should I apply?",
+        "How can I tell if my [Pet Type] named [Pet Name] needs emergency vet care?",
+        "What should I include in a first aid kit for my [Pet Breed] named [Pet Name]?",
+        "[Pet Name] was stung by a [Insect], what emergency steps should I take?",
+        "My [Pet Type] named [Pet Name] is having [Medical Emergency], what do I do?",
+        "How do I safely transport my injured [Pet Name] to the emergency vet?"
+      ],
+      "responses": [
+        "EMERGENCY: Since [Pet Name] ate [Toxic Substance], immediately [First Steps] and call [Emergency Contact]. Watch for [Symptoms] and be ready to [Next Actions].",
+        "For [Pet Name] showing [Emergency Symptom], this is [Severity Assessment]. You should [Immediate Actions] and contact [Vet/Animal Poison Control] right away.",
+        "To perform CPR on [Pet Name]: [Step-by-Step CPR Instructions]. Remember to [Important Note] and continue until [Stopping Point] or help arrives.",
+        "For [Pet Name], keep these emergency contacts handy: [Local Emergency Vet], [Animal Poison Control], and [24/7 Vet Line]. Also know [Location-Specific Resources].",
+        "For [Pet Name]'s injury from [Injury Cause], first [First Aid Steps]. Then [Next Steps] while preparing to [Transport Instructions] to the vet.",
+        "Signs [Pet Name] needs emergency care include [Emergency Signs]. If you see [Number] of these, go to [Emergency Protocol] immediately.",
+        "[Pet Name]'s first aid kit should contain [Essential Items]. Store it [Storage Location] and refresh [Expirable Items] every [Time Period].",
+        "For [Pet Name] stung by [Insect], first [First Aid Steps]. Watch for [Allergic Reaction Signs] and be prepared to [Emergency Response] if needed.",
+        "For [Pet Name]'s [Medical Emergency], follow [Emergency Protocol]. This includes [Step 1], [Step 2], and [Step 3] while contacting [Emergency Services].",
+        "To transport injured [Pet Name]: [Transport Instructions]. Use [Transport Method] and avoid [Common Mistakes]. Bring [Helpful Items] to the vet."
+      ]
     }
   ]
 }

@@ -1,17 +1,17 @@
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import GetStarted from "../pages/getStarted/GetStarted";
-import HomePage from "../pages/homePage/HomePage";
-import Chat from "../pages/chat/Chat";
+import GetStarted from "../pages/common/getStarted/GetStarted";
+import HomePage from "../pages/users/homePage/HomePage";
+import Chat from "../pages/users/chat/Chat";
 import NotFound from "../pages/notFound/NotFound";
-import Login from "../pages/login/Login";
-import SignUp from "../pages/signup/SignUp";
-import SelectPet from "../pages/signup/SelectPet";
-import SelectBreed from "../pages/signup/SelectBreed";
-import { PetAge, PetName } from "../pages/signup/NameSelection";
-import Logout from "../pages/logout/Logout";
-import HelpSupport from "../pages/helpSupport/HelpSupport";
-import PetInfoForm from "../pages/signup/PetInfoForm";
+import Login from "../pages/auth/login/Login";
+import SignUp from "../pages/auth/signup/SignUp";
+import SelectPet from "../pages/auth/signup/SelectPet";
+import SelectBreed from "../pages/auth/signup/SelectBreed";
+import { PetAge, PetName } from "../pages/auth/signup/NameSelection";
+import Logout from "../pages/auth/logout/Logout";
+import HelpSupport from "../pages/common/helpSupport/HelpSupport";
+import PetInfoForm from "../pages/auth/signup/PetInfoForm";
 
 
 const UserRoutes = () => {

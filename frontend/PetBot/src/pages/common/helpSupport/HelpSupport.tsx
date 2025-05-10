@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import styled from 'styled-components';
-import data from '../../assets/data/helpInfo';
+import data from '../../../assets/data/helpInfo';
 
 const Container = styled.div`
   margin: 20px;

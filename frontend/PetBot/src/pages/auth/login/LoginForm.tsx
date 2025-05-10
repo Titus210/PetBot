@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
+import PrimaryButton from '../../../components/ui/buttons/PrimaryButton';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');

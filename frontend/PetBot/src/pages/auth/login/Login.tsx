@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
-import PetImageCard from '../../components/ui/cards/PetImageCard'
-import SignUpForm from './SignUpForm'
 
-const SignUp = () => {
+import { Link } from 'react-router-dom'
+import PetImageCard from '../../../components/ui/cards/PetImageCard'
+import LoginForm from './LoginForm'
+
+const Login = () => {
   return (
     <>
-       <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div className="logo text-center">
           <PetImageCard />
           <h1 className="text-blue text-3xl font-bold text-center">
@@ -15,15 +16,15 @@ const SignUp = () => {
         </div>
 
         <div className="form">
-         <SignUpForm/>
+         <LoginForm/>
         </div>
 
         <div className="text-center">
-          <p className="text-sm">Already have an account? <span className='text-blue underline'><Link to= {"/login"}>Login</Link></span></p>
+          <p className="text-sm">Don't have an account? <span className='text-blue underline'><Link to= {"/signup"}>Create account</Link></span></p>
         </div>
       </div>
     </>
   )
 }
 
-export default SignUp
+export default Login
